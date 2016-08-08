@@ -1,0 +1,5 @@
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.pdb

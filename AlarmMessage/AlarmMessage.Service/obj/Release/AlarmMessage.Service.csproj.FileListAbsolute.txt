@@ -1,0 +1,9 @@
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Service.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Service.pdb
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Infrastructure.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\SqlServerDataAdapter.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AutoMapper.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Infrastructure.pdb
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.pdb

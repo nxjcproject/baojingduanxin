@@ -1,0 +1,9 @@
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\bin\Debug\SqlServerDataAdapter.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\bin\Debug\AutoMapper.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb

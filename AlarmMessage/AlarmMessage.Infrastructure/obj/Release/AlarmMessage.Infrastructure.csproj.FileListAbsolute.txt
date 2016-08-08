@@ -1,0 +1,5 @@
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\bin\Release\AlarmMessage.Infrastructure.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\bin\Release\AlarmMessage.Infrastructure.pdb
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.dll
+D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.pdb
