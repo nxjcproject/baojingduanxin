@@ -7,3 +7,11 @@ c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmM
 c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
 c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
 c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AutoMapper.dll
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
