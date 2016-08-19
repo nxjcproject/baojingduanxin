@@ -76,7 +76,6 @@
                 </tr>
             </table>
         </div>
-
         <div id="reportTable" class="easyui-panel" data-options="region:'center', border:true, collapsible:true, split:false">
             <table id="Windows_Report"></table>
         </div>
