@@ -3,3 +3,8 @@ D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infra
 D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
 D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.dll
 D:\GitProjectProgram\Project_NXJC\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Release\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Release\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.pdb

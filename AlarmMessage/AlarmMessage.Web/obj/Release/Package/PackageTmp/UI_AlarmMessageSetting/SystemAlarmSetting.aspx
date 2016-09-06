@@ -35,12 +35,11 @@
                         <table>
                             <tr>
                                 <td style="width:80px"> 组织机构：</td>
-                                <td><input id="productLineName" class="easyui-textbox" style="width: 90px;" readonly="readonly" /><input id="organizationId" readonly="readonly" style="display: none;" /></td>                                                                                          
-                                <td style="width:60px"> 报警类型：</td> 
-                                <td><input id="SystemAlarmType" class="easyui-combobox"data-options="panelHeight: 'auto'" style="width: 120px;"/></td>  
-                                <td style="width:5px">|</td>  
+                                <td><input id="productLineName" class="easyui-textbox" style="width: 90px;" readonly="readonly" />
+                                    <input id="organizationId" readonly="readonly" style="display: none;" />
+                                </td>                                                                                           
                                 <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
-                                    onclick="QuerySystemAlarmContrastFun();">查询</a>
+                                    onclick="Query();">查询</a>
                                 </td>               
                            </tr>
                        </table>                 

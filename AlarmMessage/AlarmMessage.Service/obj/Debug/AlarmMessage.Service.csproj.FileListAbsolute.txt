@@ -7,11 +7,52 @@ c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmM
 c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
 c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
 c:\users\administrator\documents\visual studio 2013\Projects\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AutoMapper.dll
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
-E:\NXJC\项目文件\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+C:\Users\大川\Desktop\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+D:\我的文档\Tencent Files\934738150\FileRecv\baojingduanxin-master\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+E:\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+E:\项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+E:\1项目\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本最终\baojingduanxin-master发布版本\baojingduanxin-master\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb

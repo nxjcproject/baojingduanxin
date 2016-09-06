@@ -11,35 +11,33 @@ namespace AlarmMessage.Service.AlarmMessageSetting
 {
     public class MessageHitoryQueryService
     {
-        public static DataTable GetSmsSendInfo(string organizationId,string organizationName ,string startTime, string endTime, string state)
+        public static DataTable GetSmsSendInfo(string organizationId,string organizationName ,string startTime, string endTime, string state1)
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @"(SELECT '' as LevelCode,'node' as NodeType,A.[SenderKeyId] ,A.[SenderType] ,A.[GroupKey1],A.[GroupKey2] ,A.[OrderSendTime],A.[AlarmText]
-                                    ,'' as [PhoneNumber],'' as [SendCount],B.[TYPE_NAME] as State,'' as [SendResult]
-                                FROM [dbo].[terminal_SmsSendInfo] A,[dbo].[system_TypeDictionary] B  
-                                where B.[GROUP_ID]='SMSendState' and A.state=B.[TYPE_ID]
-								and ( A.[GroupKey1] like @organizationId+'%' or A.[GroupKey1]=@organizationName)
-                                        and A.OrderSendTime>=@startTime
-                                        and A.OrderSendTime<=@endTime
-                                        and A.State=@state
-                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText],[TYPE_NAME])
+            string mySql = @"(SELECT  '' as LevelCode,'node' as NodeType,[SenderKeyId] ,[SenderType] ,[GroupKey1],[GroupKey2] ,[OrderSendTime],[AlarmText]
+                                    ,'' as [PhoneNumber],'' as [SendCount],'' as [State],'' as [SendResult],'' as [TYPE_NAME]
+                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] 
+                                where( [GroupKey1] like @organizationId+'%' or [GroupKey1]=@organizationName)
+                                        and OrderSendTime>=@startTime
+                                        and OrderSendTime<=@endTime
+                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText])
 	                        union all
                              (SELECT '' as LevelCode,'leafnode' as NodeType,A.[SenderKeyId],A.[SenderType],A.[GroupKey1],A.[GroupKey2],A.[OrderSendTime]
-                                    ,A.[AlarmText] ,[PhoneNumber],A.[SendCount],B.[TYPE_NAME] as State,A.[SendResult]
-                                FROM [dbo].[terminal_SmsSendInfo] A,[dbo].[system_TypeDictionary] B  
-                                where  B.[GROUP_ID]='SMSendState' and A.state=B.[TYPE_ID]
-                                     and   ( A.[GroupKey1] like @organizationId+'%' or A.[GroupKey1]=@organizationName)
+                                    ,A.[AlarmText] ,A.[PhoneNumber],A.[SendCount],A.State,A.[SendResult],B.[TYPE_NAME]
+                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] A,[dbo].[system_TypeDictionary] B  
+                                where  B.[GROUP_ID]='SMSendState' and A.State=B.[TYPE_ID]
+                                     and   (A.[GroupKey1] like @organizationId+'%' or A.[GroupKey1]=@organizationName)
                                      and A.OrderSendTime>=@startTime
                                      and A.OrderSendTime<=@endTime
-                                     and A.State=@state)
+                                     and A.State=@state1)
                               order by OrderSendTime desc,NodeType desc ,GroupKey1";
             SqlParameter[] parameters ={
-                            new SqlParameter("@organizationId", organizationId),
-                            new SqlParameter("@organizationName", organizationName),
-                            new SqlParameter("@startTime", startTime),
-                            new SqlParameter("@endTime", endTime),
-                            new SqlParameter("@state", state)
+                            new SqlParameter("organizationId", organizationId),
+                            new SqlParameter("organizationName", organizationName),
+                            new SqlParameter("startTime", startTime),
+                            new SqlParameter("endTime", endTime),
+                            new SqlParameter("state1", state1)
                          };
             DataTable table = dataFactory.Query(mySql, parameters);
             int mcode = 0;

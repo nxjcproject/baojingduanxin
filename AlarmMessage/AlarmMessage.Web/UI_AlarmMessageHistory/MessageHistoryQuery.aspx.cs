@@ -29,9 +29,9 @@ namespace AlarmMessage.Web.UI_AlarmMessageHistory
             }
         }
         [WebMethod]
-        public static string GetQueryData(string organizationId, string organizationName, string startTime, string endTime, string state)
+        public static string GetQueryData(string organizationId, string organizationName, string startTime, string endTime, string state1)
         {
-            DataTable table = MessageHitoryQueryService.GetSmsSendInfo(organizationId, organizationName, startTime, endTime, state);
+            DataTable table = MessageHitoryQueryService.GetSmsSendInfo(organizationId, organizationName, startTime, endTime, state1);
             string[] paraColumns = { "NodeType", "SenderType", "GroupKey1", "GroupKey2" };
             string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "LevelCode");
             return json;
