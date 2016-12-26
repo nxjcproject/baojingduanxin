@@ -28,12 +28,12 @@ function loadDataGrid(type, myData) {
             
             toolbar: '#toolbar_ReportTemplate',
             columns: [[
-                { field: 'Name', title: '组织机构', width: 120},
-                { field: 'AlarmTypeName', title: '报警类型', width: 100 },
+                { field: 'Name', title: '组织机构', width: 70},
+                { field: 'AlarmTypeName', title: '报警类型', width: 70 },
                 //{ field: 'AlarmGroup', title: '报警组', width: 150 },
-                { field: 'StartTime', title: '开始时间', width: 150 },
-                { field: 'EndTime', title: '结束时间', width: 150 },
-                { field: 'AlarmText', title: '报警对象', width: 200 }
+                { field: 'StartTime', title: '开始时间', width: 130 },
+                { field: 'EndTime', title: '结束时间', width: 130 },
+                { field: 'AlarmText', title: '报警对象', width: 150 }
                 //{field:'',title:'报警时长',width:}
             ]],
         })
@@ -91,7 +91,10 @@ function query() {
         murl = "AlarmHistoryQuery.aspx/GetReportData";
         mdata = "{organizationId:'" + organizationId + "',startTime:'" + startTime + "',endTime:'" + endTime + "',type:'" + type + "'}";
     }
-
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url:murl ,
@@ -100,6 +103,7 @@ function query() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             var m_msg = JSON.parse(msg.d);
             if (m_msg.total == 0) {
                 //alert("没有查询的数据");
@@ -114,8 +118,10 @@ function query() {
                 $('#Windows_Report').datagrid('loadData', []);
                 $.messager.alert('失败', '获取数据失败');
             }
-        }
-       
+        },
+        beforeSend: function (XMLHttpRequest) {
+            win;
+        }    
     });
   
 }

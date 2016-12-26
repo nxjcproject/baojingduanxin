@@ -24,7 +24,7 @@
 </head>
 <body>
  <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',split:true" style="width: 230px;">
+        <div data-options="region:'west',split:true" style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <!-- 图表开始 -->
@@ -39,7 +39,7 @@
                                     <input id="organizationId" readonly="readonly" style="display: none;" />
                                 </td>                                                                                           
                                 <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
-                                    onclick="Query();">查询</a>
+                                    onclick="QuerySystemAlarmContrastFun();">查询</a>
                                 </td>               
                            </tr>
                        </table>                 
@@ -133,7 +133,7 @@
 	    	    </table>
 	            <div style="text-align:center;padding:5px;margin-left:-18px;">
 	    	        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" onclick="save()">保存</a>
-	    	        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="$('#staffInfoEditor').window('close');">取消</a>
+	    	        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="$('#AddandEditor').window('close');">取消</a>
 	            </div>
             </div>
             <!-- 编辑窗口开始 -->

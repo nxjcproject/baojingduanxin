@@ -45,11 +45,11 @@
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',split:true" style="width: 230px;">
+        <div data-options="region:'west',split:true" style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <!-- 图表开始 -->
-        <div id="toolbar_ReportTemplate" style="display: none;height:40px;padding-top:10px">
+        <div id="toolbar_ReportTemplate" style="display: none;height:80px;padding-top:10px">
             <table>
                 <tr>
                     <td>
@@ -70,9 +70,10 @@
                                     <%--<input id="datetime" class="easyui-datetimespinner" value="6/24/2014" data-options="formatter:formatter2,parser:parser2,selections:[[0,4],[5,7]]" style="width:180px;" />--%>
                                     <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td>
+                                <tr>
                                 <td>报警类型:</td>
                                 <td>
-                                    <select id="eventType" class="easyui-combobox" name="state" style="width: 120px;" data-options="panelHeigh:'auto'">
+                                    <select id="eventType" class="easyui-combobox" name="state" style="width: 100px;" data-options="panelHeigh:'auto'">
                                         <option value="All">全部</option>
                                        <%--<option value="OrganizationID">组织机构ID</option>--%>
                                         <option value="Ammeter">电表采集</option>
@@ -85,6 +86,7 @@
                                 <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
                                     onclick="query();">查询</a>
                                 </td>
+                                    </tr>
                             </tr> 
                         </table>
                     </td>

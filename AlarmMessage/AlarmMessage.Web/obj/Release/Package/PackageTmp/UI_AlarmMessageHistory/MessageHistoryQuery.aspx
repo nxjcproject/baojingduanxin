@@ -25,14 +25,11 @@
 </head>
 <body>
  <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',split:true" style="width: 230px;">
+        <div data-options="region:'west',split:true" style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <!-- 图表开始 -->
-        <div id="toolbar_ReportTemplate" style=" height: 40px; padding-top: 10px">
-            <table>
-                <tr>
-                    <td>                     
+        <div id="toolbar_ReportTemplate" style=" height: 80px; padding-top: 10px">                    
                         <table>
                             <tr>
                                 <td > 组织机构：</td>
@@ -47,6 +44,7 @@
                                 <td>
                                     <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td> 
+                                </tr>
 <%--                                <td>电话号码：</td>     
                                 <td>
                                     <input id="phonenumber" type="text" class="easyui-textbox" style="width: 150px;" />
@@ -56,9 +54,12 @@
                                 <td>
                                     <input id="state" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style="width: 150px;" />
                                 </td>--%>
+                          </table>
+                        <table>
+                            <tr>
                                 <td>发送状态：</td> 
                                 <td>
-                                    <select id="state" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style="width: 150px;">
+                                    <select id="state" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style="width: 100px;">
 <%--                                        <option value="All">全部</option>--%>
                                         <option value="99">已发送</option>
                                         <option value="0">重试</option>
@@ -71,10 +72,8 @@
                                     onclick="Query();">查询</a>
                                 </td>               
                            </tr>
+              
                        </table>                 
-                    </td>
-                </tr>
-            </table>
         </div>
 
         <div id="reportTable" class="easyui-panel" data-options="region:'center', border:true, collapsible:true, split:false">

@@ -55,6 +55,10 @@ function Query() {
     if (state1 == "All") {
         var state1=""
     }
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: "MessageHistoryQuery.aspx/GetQueryData",
@@ -62,6 +66,7 @@ function Query() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             m_MsgData = jQuery.parseJSON(msg.d);
             if (m_MsgData.total == 0) {
                 $('#Windows_Report').treegrid('loadData', []);
@@ -71,7 +76,11 @@ function Query() {
                 loadtreegrid("last", m_MsgData);
             }
         },
+        beforeSend: function (XMLHttpRequest) {
+            win;
+        },
         error: function handleError() {
+            $.messager.progress('close');
             $('#Windows_Report').treegrid('loadData', []);
             $.messager.alert('失败', '获取数据失败');
         }
@@ -111,12 +120,12 @@ function loadtreegrid(type, myData) {
     if (type == "first") {
         $('#Windows_Report').treegrid({
             columns: [[
-                  { field: 'OrderSendTime', title: '发送时间', width: 249 },
+                  { field: 'OrderSendTime', title: '发送时间', width: 200 },
                    // { field: 'LevelCode', title: '层次码', width: 60 },
                     { field: 'GroupKey2', title: '报警分组', width: 60 },
-                    { field: 'AlarmText', title: '报警类型', width: 120 },
+                    { field: 'AlarmText', title: '报警类型', width: 100 },
                     //{ field: 'StartTime', title: '发送状态', width: 80 },
-                    { field: 'TYPE_NAME', title: '发送状态', width: 80 },
+                    { field: 'TYPE_NAME', title: '发送状态', width: 60 },
                     { field: 'PhoneNumber', title: '手机号', width: 100 },
             ]],
             fit: true,
