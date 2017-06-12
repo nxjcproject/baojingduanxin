@@ -11,17 +11,21 @@ namespace AlarmMessage.Service.AlarmMessageSetting
 {
     public class MessageHitoryQueryService
     {
-        public static DataTable GetSmsSendInfo(string organizationId,string organizationName ,string startTime, string endTime, string state1)
+        public static DataTable GetSmsSendInfo(string organizationId,string organizationName ,string startTime, string endTime, string state1, string phoneNumber)
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @"(SELECT  '' as LevelCode,'node' as NodeType,[SenderKeyId] ,[SenderType] ,[GroupKey1],[GroupKey2] ,[OrderSendTime],[AlarmText]
+            DataTable table = new DataTable();
+            if (phoneNumber=="")
+            {
+                string mySql = @"(SELECT  '' as LevelCode,'node' as NodeType,[SenderKeyId] ,[SenderType] ,[GroupKey1],[GroupKey2] ,[OrderSendTime],[AlarmText]
                                     ,'' as [PhoneNumber],'' as [SendCount],'' as [State],'' as [SendResult],'' as [TYPE_NAME]
                                 FROM [NXJC].[dbo].[terminal_SmsSendInfo] 
                                 where( [GroupKey1] like @organizationId+'%' or [GroupKey1]=@organizationName)
                                         and OrderSendTime>=@startTime
                                         and OrderSendTime<=@endTime
-                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText])
+                                        and [State]='99'
+                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText],[State])
 	                        union all
                              (SELECT '' as LevelCode,'leafnode' as NodeType,A.[SenderKeyId],A.[SenderType],A.[GroupKey1],A.[GroupKey2],A.[OrderSendTime]
                                     ,A.[AlarmText] ,A.[PhoneNumber],A.[SendCount],A.State,A.[SendResult],B.[TYPE_NAME]
@@ -32,14 +36,46 @@ namespace AlarmMessage.Service.AlarmMessageSetting
                                      and A.OrderSendTime<=@endTime
                                      and A.State=@state1)
                               order by OrderSendTime desc,NodeType desc ,GroupKey1";
-            SqlParameter[] parameters ={
+                SqlParameter[] parameters ={
                             new SqlParameter("organizationId", organizationId),
                             new SqlParameter("organizationName", organizationName),
                             new SqlParameter("startTime", startTime),
                             new SqlParameter("endTime", endTime),
                             new SqlParameter("state1", state1)
                          };
-            DataTable table = dataFactory.Query(mySql, parameters);
+                table = dataFactory.Query(mySql, parameters);
+            }
+            else
+            {
+                string mySql = @"(SELECT  '' as LevelCode,'node' as NodeType,[SenderKeyId] ,[SenderType] ,[GroupKey1],[GroupKey2] ,[OrderSendTime],[AlarmText]
+                                    ,'' as [PhoneNumber],'' as [SendCount],'' as [State],'' as [SendResult],'' as [TYPE_NAME]
+                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] 
+                                where( [GroupKey1] like @organizationId+'%' or [GroupKey1]=@organizationName)
+                                        and OrderSendTime>=@startTime
+                                        and OrderSendTime<=@endTime
+                                        and [State]='99'
+                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText],[State])
+	                        union all
+                             (SELECT '' as LevelCode,'leafnode' as NodeType,A.[SenderKeyId],A.[SenderType],A.[GroupKey1],A.[GroupKey2],A.[OrderSendTime]
+                                    ,A.[AlarmText] ,A.[PhoneNumber],A.[SendCount],A.State,A.[SendResult],B.[TYPE_NAME]
+                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] A,[dbo].[system_TypeDictionary] B  
+                                where  B.[GROUP_ID]='SMSendState' and A.State=B.[TYPE_ID]
+                                     and   (A.[GroupKey1] like @organizationId+'%' or A.[GroupKey1]=@organizationName)
+                                     and A.OrderSendTime>=@startTime
+                                     and A.OrderSendTime<=@endTime
+                                     and A.State=@state1
+                                     and A.PhoneNumber=@phoneNumber)
+                              order by OrderSendTime desc,NodeType desc ,GroupKey1";
+                SqlParameter[] parameters ={
+                            new SqlParameter("organizationId", organizationId),
+                            new SqlParameter("organizationName", organizationName),
+                            new SqlParameter("startTime", startTime),
+                            new SqlParameter("endTime", endTime),
+                            new SqlParameter("state1", state1),
+                            new SqlParameter("phoneNumber", phoneNumber)
+                         };
+                table = dataFactory.Query(mySql, parameters);
+            }                     
             int mcode = 0;
             for (int i = 0; i < table.Rows.Count; i++)
             {
@@ -64,7 +100,7 @@ namespace AlarmMessage.Service.AlarmMessageSetting
             {
                 if (dr["NodeType"].ToString() == "node")
                 {
-                    dr["state"] = "closed";
+                    dr["state"] = "open";
                 }
                 else
                 {

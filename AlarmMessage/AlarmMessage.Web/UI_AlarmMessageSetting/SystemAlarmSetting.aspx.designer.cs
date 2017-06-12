@@ -11,7 +11,7 @@ namespace AlarmMessage.Web.UI_AlarmMessageSetting {
     
     
     public partial class SystemAlarmSetting {
-
+        
         /// <summary>
         /// OrganisationTree_ProductionLine 控件。
         /// </summary>
@@ -20,5 +20,23 @@ namespace AlarmMessage.Web.UI_AlarmMessageSetting {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::WebUserContorls.Web.UI_WebUserControls.OrganizationSelector.OrganisationTree OrganisationTree_ProductionLine;
+        
+        /// <summary>
+        /// form_EnergyConsumptionPlan 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form_EnergyConsumptionPlan;
+        
+        /// <summary>
+        /// Hiddenfield_PageId 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Hiddenfield_PageId;
     }
 }

@@ -145,6 +145,11 @@
 
 
     </div>
+    <form id="form_EnergyConsumptionPlan" runat="server">
+        <div>
+            <asp:HiddenField ID="Hiddenfield_PageId" runat="server" />
+        </div>
+    </form>
 </body>
 </html>
   

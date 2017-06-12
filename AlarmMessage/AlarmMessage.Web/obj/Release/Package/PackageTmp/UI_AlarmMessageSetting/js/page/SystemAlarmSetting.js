@@ -1,5 +1,7 @@
-﻿$(function () {
-   // InitTime();
+﻿var alarmGroup;
+$(function () {
+    // InitTime();
+    alarmGroup = $('#Hiddenfield_PageId').val();
     LoadSystemAlarmTypeList();
     loadDataGrid("first");
     OpenStafftable("first");
@@ -76,7 +78,7 @@ function LoadSystemAlarmTypeList() {
     $.ajax({
         type: "POST",
         url: "SystemAlarmSetting.aspx/SystemAlarmTypeList",
-        data: '',
+        data: '{alarmGroup: "' + alarmGroup + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
@@ -216,14 +218,14 @@ function editStaffInfo(isInsert, contrastId) {
     if (isInsert) {
         isStaffInfoInsert = true;
         //初始化
-        $('#alarmType').combobox('setValue', "AllValue");
+        //$('#alarmType').combobox('setValue', "AllValue");
         $('#name').textbox('setText',"");
         $('#id').textbox('setText', "");
         $('#phoneNumber').textbox('setText', "");
         $('#beginTime').timespinner('setValue',"00:00:00");
         $('#endTime').timespinner('setValue', "23:59:59");
         $('#delay').combobox('setValue',"0");
-        $('#enabled').combobox('setValue', "是");
+        $('#enabled').combobox('setValue', "True");
     }
     else {
         isStaffInfoInsert = false;    
@@ -260,6 +262,7 @@ function save()
     }
     var mBeginTime = $('#beginTime').val();
     var mEndTime = $('#endTime').val();
+    alarmTypeName = $('#alarmType').combobox('getText')
     //if (mBeginTime >= mEndTime)
     //    $.messager.alert('提示', '请选择正确的短信发送时间段！');
     var mdelay = $('#delay').combobox('getValue');

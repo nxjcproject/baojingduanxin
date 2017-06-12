@@ -23,12 +23,21 @@ namespace AlarmMessage.Web.UI_AlarmMessageHistory
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
 #elif RELEASE
 #endif
+                string m_PageId = Request.QueryString["PageId"] != null ? Request.QueryString["PageId"] : "";
+                Hiddenfield_PageId.Value = m_PageId;
+                //Hiddenfield_PageId.Value = "4397012D-3583-4E65-806F-6D48E8A6ECBF";
                 this.OrganisationTree_ProductionLine.Organizations = GetDataValidIdGroup("ProductionOrganization");  //向web用户控件传递数据授权参数
                 this.OrganisationTree_ProductionLine.PageName = "AlarmHistoryQuery.aspx";   //向web用户控件传递当前调用的页面名称
                 this.OrganisationTree_ProductionLine.LeveDepth = 5;
             }
         }
-
+        [WebMethod]
+        public static string SystemAlarmTypeList(string alarmGroup)
+        {
+            DataTable table = baojinglishijiluchaxun.Service.Baojinglishijiluchaxun.AlarmHistorySelect1.GetSystemAlarmTypeListTable(alarmGroup);
+            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
+            return json;
+        }
         [WebMethod]
         public static string GetReportData(string organizationId, string startTime, string endTime,string type)
         {

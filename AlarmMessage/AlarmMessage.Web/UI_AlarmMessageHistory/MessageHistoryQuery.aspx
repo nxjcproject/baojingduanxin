@@ -67,7 +67,12 @@
                                         <option value="2">超期</option>
                                         <option value="3">超短信条数</option>                     
                                          </select>
-                                </td>                                                                                   
+                                </td> 
+                                <td>手机号：</td> 
+                                <td>
+                                    <input id="phoneNumber" class="easyui-numberbox" type="text" style="width:150px;" />
+                                </td> 
+                                <td>（选填）</td>                                                                                
                                 <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
                                     onclick="Query();">查询</a>
                                 </td>               

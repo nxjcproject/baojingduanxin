@@ -1,7 +1,9 @@
-﻿
+﻿var alarmGroup;
 $(function () {
+    alarmGroup = $('#Hiddenfield_PageId').val();
     InitDate();
     loadDataGrid("first");
+    LoadSystemAlarmTypeList();
     //loadCombobox("first"); 
 });
 //初始化日期框
@@ -13,6 +15,29 @@ function InitDate() {
     var beforeString = beforeDate.getFullYear() + '-' + (beforeDate.getMonth() + 1) + '-' + beforeDate.getDate() + " 00:00:00";
     $('#startDate').datetimebox('setValue', beforeString);
     $('#endDate').datetimebox('setValue', nowString);
+}
+var alarmType = '';
+var alarmTypeName = '';
+function LoadSystemAlarmTypeList() {
+    $.ajax({
+        type: "POST",
+        url: "AlarmHistoryQuery.aspx/SystemAlarmTypeList",
+        data: '{alarmGroup: "' + alarmGroup + '"}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            m_MsgData = jQuery.parseJSON(msg.d);
+            $('#eventType').combobox({
+                data: m_MsgData.rows,
+                valueField: 'AlarmTypeId',
+                textField: 'AlarmTypeName',
+                onSelect: function (param) {
+                    alarmType = param.AlarmTypeId;
+                    alarmTypeName = param.AlarmTypeName;
+                }
+            });
+        }
+    });
 }
 
 
@@ -29,11 +54,11 @@ function loadDataGrid(type, myData) {
             toolbar: '#toolbar_ReportTemplate',
             columns: [[
                 { field: 'Name', title: '组织机构', width: 70},
-                { field: 'AlarmTypeName', title: '报警类型', width: 70 },
+                { field: 'AlarmTypeName', title: '报警类型', width: 100 },
                 //{ field: 'AlarmGroup', title: '报警组', width: 150 },
                 { field: 'StartTime', title: '开始时间', width: 130 },
                 { field: 'EndTime', title: '结束时间', width: 130 },
-                { field: 'AlarmText', title: '报警对象', width: 150 }
+                { field: 'AlarmText', title: '报警对象', width: 300 }
                 //{field:'',title:'报警时长',width:}
             ]],
         })

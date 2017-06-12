@@ -49,7 +49,7 @@
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <!-- 图表开始 -->
-        <div id="toolbar_ReportTemplate" style="display: none;height:80px;padding-top:10px">
+        <div id="toolbar_ReportTemplate" style="display: none;height:60px;padding-top:10px">
             <table>
                 <tr>
                     <td>
@@ -71,18 +71,10 @@
                                     <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td>
                                 <tr>
-                                <td>报警类型:</td>
-                                <td>
-                                    <select id="eventType" class="easyui-combobox" name="state" style="width: 100px;" data-options="panelHeigh:'auto'">
-                                        <option value="All">全部</option>
-                                       <%--<option value="OrganizationID">组织机构ID</option>--%>
-                                        <option value="Ammeter">电表采集</option>
-                                        <option value="AmmeterS">电表报警</option>
-                                        <option value="Network">网络报警</option>
-                                        <option value="OPC">DCS报警</option>
-                                      <%--  <option value="错误事件">错误事件</option>--%>
-                                    </select>
-                                </td>
+                                <td>报警类型：</td>
+	    			            <td>
+                                    <input class="easyui-combobox" id="eventType"  style="width:100px" data-options="panelHeight: 'auto'"/>           
+	    			            </td>
                                 <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
                                     onclick="query();">查询</a>
                                 </td>
@@ -99,5 +91,10 @@
         </div>
         <!-- 图表结束 -->
     </div>
+    <form id="form_EnergyConsumptionPlan" runat="server">
+        <div>
+            <asp:HiddenField ID="Hiddenfield_PageId" runat="server" />
+        </div>
+    </form>
 </body>
 </html>

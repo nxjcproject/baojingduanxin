@@ -12,27 +12,54 @@ namespace AlarmMessage.Service.AlarmMessageSetting
 {
     public class  SystemAlarmSettingService
     {
-        public static DataTable GetSystemAlarmTypeListTable() 
-        {
-            DataTable Table = SystemAlarmType();
-            Table.Columns.Add("selected",typeof(string));
-            Table.Rows.Add("AllValue","全部","true");
-            DataView dv=Table.DefaultView;
-            dv.Sort="AlarmTypeId asc";
-            DataTable table=dv.ToTable();
-            return table;     
-        }
-        private static DataTable SystemAlarmType() 
+        public static DataTable GetSystemAlarmTypeListTable(string alarmGroup) 
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            string mySql = @" SELECT [AlarmTypeId]
+            string Sql = @"SELECT [PAGE_ID]                          
+                        FROM [IndustryEnergy_SH].[dbo].[content]
+                        where [NODE_ID]=@alarmGroup";
+            SqlParameter mPara = new SqlParameter("alarmGroup", alarmGroup);
+            DataTable Table = dataFactory.Query(Sql, mPara);
+            string mPageId = "";
+            if (Table.Rows.Count != 0)
+            {
+                mPageId = Table.Rows[0]["PAGE_ID"].ToString();
+            }
+            DataTable table = new DataTable();
+            if (mPageId == "All" || mPageId == "")
+            {
+                string mSql = @" SELECT A.[AlarmTypeId]
+                              ,A.[AlarmTypeName]                       
+                            FROM [dbo].[system_SystemAlarmType] A
+                            order by AlarmGroup,DisplayIndex";
+                table = dataFactory.Query(mSql);
+            }
+            else
+            {
+                string mySql = @" SELECT [AlarmTypeId]
                               ,[AlarmTypeName]                       
-                            FROM [dbo].[system_SystemAlarmType] ";
-            DataTable Table = dataFactory.Query(mySql);
-            return Table;
-        
+                            FROM [NXJC].[dbo].[system_SystemAlarmType] A,[IndustryEnergy_SH].[dbo].[content] B
+                            where B.[NODE_ID]=@alarmGroup
+                            and A.[AlarmGroup]=B.[PAGE_ID]
+                            order by AlarmGroup,DisplayIndex";
+                SqlParameter para = new SqlParameter("alarmGroup", alarmGroup);
+                table = dataFactory.Query(mySql, para);
+            }
+            return table;     
         }
+//        private static DataTable SystemAlarmType(string alarmGroup) 
+//        {
+//            string connectionString = ConnectionStringFactory.NXJCConnectionString;
+//            ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
+//            string mySql = @" SELECT [AlarmTypeId]
+//                              ,[AlarmTypeName]                       
+//                            FROM [dbo].[system_SystemAlarmType]
+//                            order by AlarmGroup,DisplayIndex";
+//            DataTable Table = dataFactory.Query(mySql);
+//            return Table;
+        
+//        }
         public static DataTable GetSystemAlarmContrastTable(string organizationID,string AlarmType)
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
@@ -109,11 +136,11 @@ namespace AlarmMessage.Service.AlarmMessageSetting
                           where A.[Enabled]=1
                           and A.[OrganizationID]=B.[OrganizationID]
                           and A.[OrganizationID] like @mOrganizationID+'%'
-                          order by Convert(int,A.[StaffInfoID]) asc";
+                          order by A.[StaffInfoID] asc";
             Table = dataFactory.Query(mysql, new SqlParameter("@mOrganizationID", organizationID));
             return Table;    
         }
-        public static int AddSystemAlarmStaffInfoToTable(string isStaffInfoInsert, string contrastItemId, string organizationID, string alarmType, string alarmTypeName, string phoneNumber, string staffInfoItemId, string beginTime, string endTime, string delay, string enabled)       
+        public static int AddSystemAlarmStaffInfoToTable(string alarmGroup, string isStaffInfoInsert, string contrastItemId, string organizationID, string alarmType, string alarmTypeName, string phoneNumber, string staffInfoItemId, string beginTime, string endTime, string delay, string enabled)       
         {
             int executeResult = 0;
             if (Convert.ToBoolean(isStaffInfoInsert))
@@ -124,7 +151,7 @@ namespace AlarmMessage.Service.AlarmMessageSetting
                 }
                 else
                 {
-                    DataTable Table = SystemAlarmType();
+                    DataTable Table = GetSystemAlarmTypeListTable(alarmGroup);
                     string malarmType = "";
                     string malarmTypeName = "";
                     foreach (DataRow dR in Table.Rows)
