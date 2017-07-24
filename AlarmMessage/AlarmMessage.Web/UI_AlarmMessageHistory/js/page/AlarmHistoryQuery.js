@@ -1,4 +1,5 @@
 ﻿var alarmGroup;
+var g_timer;
 $(function () {
     alarmGroup = $('#Hiddenfield_PageId').val();
     InitDate();
@@ -16,8 +17,6 @@ function InitDate() {
     $('#startDate').datetimebox('setValue', beforeString);
     $('#endDate').datetimebox('setValue', nowString);
 }
-var alarmType = '';
-var alarmTypeName = '';
 function LoadSystemAlarmTypeList() {
     $.ajax({
         type: "POST",
@@ -26,16 +25,17 @@ function LoadSystemAlarmTypeList() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
-            m_MsgData = jQuery.parseJSON(msg.d);
-            $('#eventType').combobox({
-                data: m_MsgData.rows,
-                valueField: 'AlarmTypeId',
-                textField: 'AlarmTypeName',
-                onSelect: function (param) {
-                    alarmType = param.AlarmTypeId;
-                    alarmTypeName = param.AlarmTypeName;
+            var m_MsgData = jQuery.parseJSON(msg.d)['rows'];
+            var m_ResultData = [];
+            m_ResultData.push({ "AlarmTypeId": "All", "AlarmTypeName": "全部" });
+            if (m_MsgData != undefined && m_MsgData != null && m_MsgData.length > 0) {
+                for (var i = 0; i < m_MsgData.length; i++) {
+                    m_ResultData.push(m_MsgData[i]);
                 }
-            });
+            }
+
+            $('#eventType').combobox('loadData', m_ResultData);
+            $('#eventType').combobox("setValue", m_ResultData[0].AlarmTypeId);
         }
     });
 }
@@ -58,7 +58,7 @@ function loadDataGrid(type, myData) {
                 //{ field: 'AlarmGroup', title: '报警组', width: 150 },
                 { field: 'StartTime', title: '开始时间', width: 130 },
                 { field: 'EndTime', title: '结束时间', width: 130 },
-                { field: 'AlarmText', title: '报警对象', width: 300 }
+                { field: 'AlarmText', title: '报警对象', width: 400 }
                 //{field:'',title:'报警时长',width:}
             ]],
         })
@@ -87,6 +87,9 @@ function onOrganisationTreeClick(node) {
     // 用于呈现，在界面上显示当前的组织机构名称
 
     $('#productLineName').textbox('setText', node.text);
+
+    clearTimeout(g_timer);
+    realtimeAlarm();
 }
 
 
@@ -103,28 +106,17 @@ function query() {
     var startTime = $('#startDate').datebox('getValue');
     var endTime = $('#endDate').datebox('getValue');
     var type = $('#eventType').combobox('getValue');
+    var m_url = "AlarmHistoryQuery.aspx/GetReportData";
+    var m_data = "{organizationId:'" + organizationId + "',startTime:'" + startTime + "',endTime:'" + endTime + "',type:'" + type + "',alarmGroup:'" + alarmGroup + "'}";
 
-  
-    var murl = "";
-    var mdata = "";
-    if (type == "All") {
-        murl = "AlarmHistoryQuery.aspx/GetReportDataWithoutType";
-        mdata = "{organizationId:'" + organizationId + "',startTime:'" + startTime + "',endTime:'" + endTime + "'}";
-    }
-
-    else {
-        murl = "AlarmHistoryQuery.aspx/GetReportData";
-        mdata = "{organizationId:'" + organizationId + "',startTime:'" + startTime + "',endTime:'" + endTime + "',type:'" + type + "'}";
-    }
     var win = $.messager.progress({
         title: '请稍后',
         msg: '数据载入中...'
     });
     $.ajax({
         type: "POST",
-        url:murl ,
-        //data: "{organizationId:'" + organizationId + "',startTime:'" + startTime + "',endTime:'" + endTime + "'}",
-        data: mdata,
+        url: m_url,
+        data: m_data,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
@@ -149,4 +141,52 @@ function query() {
         }    
     });
   
+}
+function setTimer() {
+    g_timer = setTimeout("realtimeAlarm()", 60000);       //1分钟
+}
+function realtimeAlarm() {
+    if (document.getElementsByName("alarmType")[0].checked == false) {
+        clearTimeout(g_timer);
+        return;
+    }
+    else {
+        $(".queryDate").hide();
+    }
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
+    var organizationId = $('#organizationId').val();
+    $.ajax({
+        type: "POST",
+        url: "AlarmHistoryQuery.aspx/GetRealTimeAlarm",
+        data: "{organizationId:'" + organizationId + "',alarmGroup:'" + alarmGroup + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            $.messager.progress('close');
+            var m_MsgData = jQuery.parseJSON(msg.d);
+            if (m_MsgData != null && m_MsgData != undefined) {
+                loadDataGrid("last", m_MsgData);
+                setTimer();
+            }
+            else {
+                loadDataGrid("last", []);
+                setTimer();
+            }
+        },
+        beforeSend: function (XMLHttpRequest) {
+            win;
+        },
+        error: function () {
+            $.messager.progress('close');
+            setTimer()
+        }
+    });
+}
+function setHistory() {
+    clearTimeout(g_timer);
+    $('#Windows_Report').datagrid("loadData", []);
+    $(".queryDate").show();
 }

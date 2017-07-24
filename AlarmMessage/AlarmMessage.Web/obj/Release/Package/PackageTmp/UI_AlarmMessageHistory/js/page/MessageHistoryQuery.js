@@ -51,14 +51,9 @@ function Query() {
     var startTime = $('#startDate').datebox('getValue');
     var endTime = $('#endDate').datebox('getValue');
     //var phoneNumber = $('#phonenumber').textbox('getValue');
-    var state1 = $('#state').combobox('getValue');
+    var state = $('#state').combobox('getValue');
     var phoneNumber = $('#phoneNumber').numberbox('getText');
-    //if (phoneNumber=="") {
-    //    phoneNumber = 'Null';
-    //}
-    if (state1 == "All") {
-        var state1=""
-    }
+    var m_StaticsMethod = $('#StaticsMethod').combobox('getValue');
     var win = $.messager.progress({
         title: '请稍后',
         msg: '数据载入中...'
@@ -66,7 +61,7 @@ function Query() {
     $.ajax({
         type: "POST",
         url: "MessageHistoryQuery.aspx/GetQueryData",
-        data: '{organizationId: "' + organizationId + '", organizationName: "' + organizationName + '", startTime: "' + startTime + '", endTime:"' + endTime + '", state1: "' + state1 + '", phoneNumber:"' + phoneNumber + '" }',
+        data: '{organizationId: "' + organizationId + '", organizationName: "' + organizationName + '", startTime: "' + startTime + '", endTime:"' + endTime + '", state: "' + state + '", phoneNumber:"' + phoneNumber + '", myStaticsMethod:"' + m_StaticsMethod + '" }',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
@@ -78,6 +73,8 @@ function Query() {
             }
             else {
                 loadtreegrid("last", m_MsgData);
+                $('#Windows_Report').treegrid('collapseAll');
+
             }
         },
         beforeSend: function (XMLHttpRequest) {
@@ -124,13 +121,18 @@ function loadtreegrid(type, myData) {
     if (type == "first") {
         $('#Windows_Report').treegrid({
             columns: [[
-                  { field: 'OrderSendTime', title: '发送时间', width: 200 },
-                   // { field: 'LevelCode', title: '层次码', width: 60 },
-                    { field: 'GroupKey2', title: '报警分组', width: 100 },
-                    { field: 'AlarmText', title: '报警对象', width: 300 },
-                    //{ field: 'StartTime', title: '发送状态', width: 80 },
-                    { field: 'TYPE_NAME', title: '发送状态', width: 60 },
-                    { field: 'PhoneNumber', title: '手机号', width: 100 },
+                  { field: 'id', title: 'Id', width: 60, hidden:true },
+                  { field: 'text', title: '名称', width: 170 },
+                  { field: 'GroupKey1', title: '报警分组1', width: 110 },
+                  { field: 'GroupKey2', title: '报警分组2', width: 110 },
+                  { field: 'GroupKey3', title: '报警分组3', width: 100 },
+                  { field: 'PhoneNumber', title: '手机号', width: 100 },
+                  { field: 'SmsState', title: '状态', width: 100 },
+                  { field: 'SendCount', title: '重试次数', width: 100 },
+                  { field: 'CreateTime', title: '报警时间', width: 110 },
+                  { field: 'OrderSendTime', title: '发送时间', width: 110 },
+                  { field: 'AlarmText', title: '报警内容', width: 300 },
+                  { field: 'SendResult', title: '返回字', width: 60 }
             ]],
             fit: true,
             toolbar: "#toolbar_ReportTemplate",
@@ -138,8 +140,8 @@ function loadtreegrid(type, myData) {
             singleSelect: true,
             striped: true,
             idField: "id",
-            treeField: "OrderSendTime",
-            initialState: "collapsed",
+            treeField: "text",
+            initialState: "collapseAll",
             data: []
         });
     }

@@ -23,6 +23,7 @@ namespace AlarmMessage.Web.UI_AlarmMessageSetting
                 List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf", "zc_nxjc_qtx", "zc_nxjc_tsc_tsf" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 //Hiddenfield_PageId.Value = "EnergyMonitor";
+                mPageOpPermission = "1111";
 #elif RELEASE
 #endif
                 string m_PageId = Request.QueryString["PageId"] != null ? Request.QueryString["PageId"] : "";
@@ -32,6 +33,15 @@ namespace AlarmMessage.Web.UI_AlarmMessageSetting
                 this.OrganisationTree_ProductionLine.PageName = "SystemAlarmSetting.aspx";   //向web用户控件传递当前调用的页面名称
                 this.OrganisationTree_ProductionLine.LeveDepth = 5;
             }
+        }
+        /// <summary>
+        /// 增删改查权限控制
+        /// </summary>
+        /// <returns></returns>
+        [WebMethod]
+        public static char[] AuthorityControl()
+        {
+            return mPageOpPermission.ToArray();
         }
         [WebMethod]
         public static string SystemAlarmTypeList(string alarmGroup) 

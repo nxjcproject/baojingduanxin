@@ -19,13 +19,13 @@ namespace AlarmMessage.Web.UI_AlarmMessageHistory
             {
 #if DEBUG
                 ////////////////////调试用,自定义的数据授权
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf","zc_nxjc_lpsc_lpsf" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
 #elif RELEASE
 #endif
-                string m_PageId = Request.QueryString["PageId"] != null ? Request.QueryString["PageId"] : "";
-                Hiddenfield_PageId.Value = m_PageId;
-                //Hiddenfield_PageId.Value = "4397012D-3583-4E65-806F-6D48E8A6ECBF";
+                string m_NodeId = Request.QueryString["PageId"] != null ? Request.QueryString["PageId"] : "";
+                //string m_NodeId = "84AC953D-4EFE-4C2A-A287-B83D57B21020";
+                Hiddenfield_PageId.Value = baojinglishijiluchaxun.Service.Baojinglishijiluchaxun.AlarmHistorySelect1.GetPageIdByNodeId(m_NodeId);
                 this.OrganisationTree_ProductionLine.Organizations = GetDataValidIdGroup("ProductionOrganization");  //向web用户控件传递数据授权参数
                 this.OrganisationTree_ProductionLine.PageName = "AlarmHistoryQuery.aspx";   //向web用户控件传递当前调用的页面名称
                 this.OrganisationTree_ProductionLine.LeveDepth = 5;
@@ -39,19 +39,25 @@ namespace AlarmMessage.Web.UI_AlarmMessageHistory
             return json;
         }
         [WebMethod]
-        public static string GetReportData(string organizationId, string startTime, string endTime,string type)
+        public static string GetReportData(string organizationId, string startTime, string endTime, string type, string alarmGroup)
         {
-            DataTable table = baojinglishijiluchaxun.Service.Baojinglishijiluchaxun.AlarmHistorySelect1.GetMainMachineListTable(organizationId, startTime, endTime, type);
+            DataTable table = baojinglishijiluchaxun.Service.Baojinglishijiluchaxun.AlarmHistorySelect1.GetMainMachineListTable(organizationId, startTime, endTime, type, alarmGroup);
             string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
             return json;
         }
         [WebMethod]
-        public static string GetReportDataWithoutType(string organizationId, string startTime, string endTime) 
+        public static string GetRealTimeAlarm(string organizationId, string alarmGroup)
         {
-            DataTable table = baojinglishijiluchaxun.Service.Baojinglishijiluchaxun.AlarmHistorySelect1.GetMainMachineListTable(organizationId, startTime, endTime);
-            string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
-            return json;
+            DataTable table = baojinglishijiluchaxun.Service.Baojinglishijiluchaxun.AlarmHistorySelect1.GetRealTimeAlarm(organizationId, alarmGroup);
+            if (table != null)
+            {
+                string json = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(table);
+                return json;
+            }
+            else
+            {
+                return "{\"rows\":[],\"total\":0}";
+            }
         }
-        
     }
 }

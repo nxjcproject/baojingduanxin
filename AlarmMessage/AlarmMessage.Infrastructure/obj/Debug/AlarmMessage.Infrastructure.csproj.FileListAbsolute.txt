@@ -31,3 +31,17 @@ C:\Users\Administrator\Desktop\2017.4.1日需要上传到git\baojingduanxin-mast
 C:\Users\Administrator\Desktop\2017.4.1日需要上传到git\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.pdb
 C:\Users\Administrator\Desktop\2017.4.1日需要上传到git\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.dll
 C:\Users\Administrator\Desktop\2017.4.1日需要上传到git\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\小徐师兄\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\小徐师兄\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\小徐师兄\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\小徐师兄\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\小徐师兄\7.7修改权限\baojingduanxin-master\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.dll
+C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\obj\Debug\AlarmMessage.Infrastructure.pdb

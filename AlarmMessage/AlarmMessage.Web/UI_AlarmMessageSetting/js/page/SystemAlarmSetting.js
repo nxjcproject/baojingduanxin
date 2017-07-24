@@ -5,6 +5,7 @@ $(function () {
     LoadSystemAlarmTypeList();
     loadDataGrid("first");
     OpenStafftable("first");
+    initPageAuthority();
     $('#name').textbox({
         onClickButton: function () {
             $('#stafftable').window('open');
@@ -17,18 +18,44 @@ function InitTime() {
     $('#beginTime').timespinner({ min: '00:00', required: true, showSeconds: true });
     $('#endTime').timespinner({ min: '00:00', required: true, showSeconds: true });
 }
+function initPageAuthority() {
+    $.ajax({
+        type: "POST",
+        url: "SystemAlarmSetting.aspx/AuthorityControl",
+        data: "",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,//同步执行
+        success: function (msg) {
+            PageOpPermission = msg.d;
+            //增加
+            if (PageOpPermission[1] == '0') {
+                $("#id_add").linkbutton('disable');
+            }
+            //修改
+            //if (authArray[2] == '0') {
+            //    $("#edit").linkbutton('disable');
+            //}
+            //删除
+            if (PageOpPermission[3] == '0') {
+                $("#id_deleteAll").linkbutton('disable');
+            }
+        }
+    });
+}
+
 var mContrastItemId = "";
 function loadDataGrid(type, myData) {
     if (type == "first") {
         $('#gridMain_SystemAlarmContrast').datagrid({
             columns: [[
-                    { field: 'StaffInfoID', title: '员工编号', width: 60 },
+                    { field: 'StaffInfoID', title: '员工编号', width: 65,sortable:true },
                     { field: 'Name', title: '姓名', width: 60 },
                     { field: 'StartTime', title: '发送时间', width: 80 },
                     { field: 'EndTime', title: '结束时间', width: 80 },
                     { field: 'SendDelay', title: '延时', width: 75 },
                     { field: 'PhoneNumber', title: '手机号', width: 80 },
-                    { field: 'AlarmText', title: '报警类别', width: 80 },                   
+                    { field: 'AlarmText', title: '报警类别', width: 80, sortable: true },
                     { field: 'MessageType', title: '信息类型', width: 80 },
                     { field: 'Organization', title: '组织机构', width: 80 },
                     {
@@ -51,6 +78,8 @@ function loadDataGrid(type, myData) {
             rownumbers: true,
             singleSelect: true,
             striped: true,
+            remoteSort:false,
+            multiSort:true,
             idField: 'ContrastItemId',
             data: [],
             onClickRow: function (index, row) {

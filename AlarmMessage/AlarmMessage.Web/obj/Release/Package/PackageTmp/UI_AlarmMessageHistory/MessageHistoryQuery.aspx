@@ -32,47 +32,45 @@
         <div id="toolbar_ReportTemplate" style=" height: 60px; padding-top: 10px">                    
                         <table>
                             <tr>
-                                <td > 组织机构：</td>
-                                <td><input id="productLineName" class="easyui-textbox" style="width: 90px;" readonly="readonly" />
+                                <td style ="width:60px; text-align:right;"> 组织机构</td>
+                                <td style ="width:115px;"><input id="productLineName" class="easyui-textbox" style="width: 110px;" readonly="readonly" />
                                     <input id="organizationId" readonly="readonly" style="display: none;" />
                                 </td>
-                                <td>开始时间：</td>
-                                <td>
+                                <td style ="width:60px; text-align:right;">开始时间</td>
+                                <td style ="width:155px;">
                                     <input id="startDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td>
-                                <td>结束时间：</td>
-                                <td>
-                                    <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
+                                 <td style ="width:60px; text-align:right;">手机号</td> 
+                                <td style ="width:105px;">
+                                    <input id="phoneNumber" class="easyui-numberbox" type="text" style="width:100px;" />
                                 </td> 
+                                <td style ="width:80px;">(选填)</td>
                                 </tr>
-<%--                                <td>电话号码：</td>     
-                                <td>
-                                    <input id="phonenumber" type="text" class="easyui-textbox" style="width: 150px;" />
-                                </td>--%>
-
-<%--                                <td>发送状态：</td>
-                                <td>
-                                    <input id="state" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style="width: 150px;" />
-                                </td>--%>
-                          </table>
-                        <table>
                             <tr>
-                                <td>发送状态：</td> 
+                                <td style ="width:60px; text-align:right;">发送状态</td> 
                                 <td>
-                                    <select id="state" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style="width: 100px;">
-<%--                                        <option value="All">全部</option>--%>
+                                    <select id="state" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style ="width:110px">
+                                        <option value="All" selected ="selected">全部</option>
                                         <option value="99">已发送</option>
-                                        <option value="0">重试</option>
+                                        <option value="0">正在发送</option>
+                                        <option value="80">发送前报警解除</option>
                                         <option value="1">重试满</option>
                                         <option value="2">超期</option>
-                                        <option value="3">超短信条数</option>                     
-                                         </select>
+                                        <option value="3">超条数</option>  
+                                        <option value="4">电话号码不合法</option>                     
+                                    </select>
                                 </td> 
-                                <td>手机号：</td> 
+                                <td style ="width:60px; text-align:right;">结束时间</td>
                                 <td>
-                                    <input id="phoneNumber" class="easyui-numberbox" type="text" style="width:150px;" />
-                                </td> 
-                                <td>（选填）</td>                                                                                
+                                    <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
+                                </td>
+                                <td style ="width:60px; text-align:right;">统计方式</td>
+                                <td>
+                                    <select id="StaticsMethod" class="easyui-combobox" data-options="panelHeight:'auto'" required="required" style ="width:100px">
+                                        <option value="SmsMessage" selected ="selected">按短信</option>
+                                        <option value="PhoneNumber">按手机号</option>                     
+                                    </select>
+                                </td>                                                                      
                                 <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
                                     onclick="Query();">查询</a>
                                 </td>               

@@ -11,118 +11,120 @@ namespace AlarmMessage.Service.AlarmMessageSetting
 {
     public class MessageHitoryQueryService
     {
-        public static DataTable GetSmsSendInfo(string organizationId,string organizationName ,string startTime, string endTime, string state1, string phoneNumber)
+        public static DataTable GetSmsSendInfo(string organizationId, string organizationName, string startTime, string endTime, string state, string phoneNumber, string myStaticsMethod)
         {
             string connectionString = ConnectionStringFactory.NXJCConnectionString;
             ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-            DataTable table = new DataTable();
-            if (phoneNumber=="")
+            string m_Sql = @"SELECT A.SendItemId
+                                  ,A.SenderKeyId
+                                  ,A.GroupKey1
+                                  ,A.GroupKey2
+                                  ,A.GroupKey3
+                                  ,A.PhoneNumber
+                                  ,A.SendCount
+                                  ,A.CreateTime
+                                  ,A.OrderSendTime
+                                  ,A.AlarmText
+                                  ,(case when A.State = '0' then '正在发送'
+	                                    when A.State = '1' then '重试满'
+			                            when A.State = '2' then '超期'
+			                            when A.State = '3' then '超条数'
+			                            when A.State = '4' then '电话号码不合法'
+			                            when A.State = '80' then '发送前报警解除'
+			                            when A.State = '99' then '已发送' end) as SmsState
+                                  ,A.SendResult
+                              FROM terminal_SmsSendInfo A, system_AlarmLog B, system_Organization C, system_Organization D
+                              where A.OrderSendTime >= '{0}'
+                              and A.OrderSendTime < '{1}'
+                              and A.SenderKeyId = B.AlarmItemId
+                              and B.OrganizationID = C.OrganizationID
+                              and D.OrganizationID = '{2}'
+                              and C.LevelCode like D.LevelCode + '%'
+                              {3}
+                              {4}";
+            string m_StateCondition = "";
+            string m_PhoneNumberCondition = "";
+            if (state != "All")
             {
-                string mySql = @"(SELECT  '' as LevelCode,'node' as NodeType,[SenderKeyId] ,[SenderType] ,[GroupKey1],[GroupKey2] ,[OrderSendTime],[AlarmText]
-                                    ,'' as [PhoneNumber],'' as [SendCount],'' as [State],'' as [SendResult],'' as [TYPE_NAME]
-                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] 
-                                where( [GroupKey1] like @organizationId+'%' or [GroupKey1]=@organizationName)
-                                        and OrderSendTime>=@startTime
-                                        and OrderSendTime<=@endTime
-                                        and [State]='99'
-                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText],[State])
-	                        union all
-                             (SELECT '' as LevelCode,'leafnode' as NodeType,A.[SenderKeyId],A.[SenderType],A.[GroupKey1],A.[GroupKey2],A.[OrderSendTime]
-                                    ,A.[AlarmText] ,A.[PhoneNumber],A.[SendCount],A.State,A.[SendResult],B.[TYPE_NAME]
-                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] A,[dbo].[system_TypeDictionary] B  
-                                where  B.[GROUP_ID]='SMSendState' and A.State=B.[TYPE_ID]
-                                     and   (A.[GroupKey1] like @organizationId+'%' or A.[GroupKey1]=@organizationName)
-                                     and A.OrderSendTime>=@startTime
-                                     and A.OrderSendTime<=@endTime
-                                     and A.State=@state1)
-                              order by OrderSendTime desc,NodeType desc ,GroupKey1";
-                SqlParameter[] parameters ={
-                            new SqlParameter("organizationId", organizationId),
-                            new SqlParameter("organizationName", organizationName),
-                            new SqlParameter("startTime", startTime),
-                            new SqlParameter("endTime", endTime),
-                            new SqlParameter("state1", state1)
-                         };
-                table = dataFactory.Query(mySql, parameters);
+                m_StateCondition = string.Format(" and A.State = {0} ", state);
+            }
+            if (phoneNumber != "" && phoneNumber != "undefined")
+            {
+                m_PhoneNumberCondition = string.Format(" and A.PhoneNumber = '{0}' ", phoneNumber);
+            }
+            m_Sql = string.Format(m_Sql, startTime, endTime, organizationId, m_StateCondition, m_PhoneNumberCondition);
+
+            DataTable m_SmsSendInfoTable = dataFactory.Query(m_Sql);
+            DataTable m_SmsSendInfoTreeTable = SetSmsSendInfoTree(m_SmsSendInfoTable, myStaticsMethod);
+            return m_SmsSendInfoTreeTable;
+        }
+        private static DataTable SetSmsSendInfoTree(DataTable mySmsSendInfoTable, string myStaticsMethod)
+        {
+            if (mySmsSendInfoTable != null)
+            {
+                DataView m_SmsSendInfoView = mySmsSendInfoTable.DefaultView;
+                m_SmsSendInfoView.Sort = "CreateTime desc,AlarmText, SendResult,PhoneNumber";
+                if (myStaticsMethod == "SmsMessage")     //以短信内容组织树
+                {
+
+                    DataTable m_RootTable = m_SmsSendInfoView.ToTable(true, "SenderKeyId", "AlarmText", "GroupKey1", "GroupKey2", "GroupKey3");
+                    DataTable m_SmsSendInfoTableSorted = m_SmsSendInfoView.ToTable();
+                    m_SmsSendInfoTableSorted.Columns.Add("text", typeof(string));
+                    for (int i = 0; i < m_RootTable.Rows.Count; i++)
+                    {
+                        DataRow m_NewRowTemp = m_SmsSendInfoTableSorted.NewRow();
+                        m_NewRowTemp["text"] = m_RootTable.Rows[i]["AlarmText"];
+                        m_NewRowTemp["SendItemId"] = m_RootTable.Rows[i]["SenderKeyId"];
+                        m_NewRowTemp["SenderKeyId"] = "0";
+                        m_NewRowTemp["GroupKey1"] = m_RootTable.Rows[i]["GroupKey1"];
+                        m_NewRowTemp["GroupKey2"] = m_RootTable.Rows[i]["GroupKey2"];
+                        m_NewRowTemp["GroupKey3"] = m_RootTable.Rows[i]["GroupKey3"];
+                        m_NewRowTemp["PhoneNumber"] = DBNull.Value;
+                        m_NewRowTemp["SendCount"] = DBNull.Value;
+                        m_NewRowTemp["CreateTime"] = DBNull.Value;
+                        m_NewRowTemp["OrderSendTime"] = DBNull.Value;
+                        m_NewRowTemp["AlarmText"] = DBNull.Value;
+                        m_NewRowTemp["SmsState"] = DBNull.Value;
+                        m_NewRowTemp["SendResult"] = DBNull.Value;
+                        m_SmsSendInfoTableSorted.Rows.Add(m_NewRowTemp);
+                    }
+                    m_SmsSendInfoTableSorted.Columns["SendItemId"].ColumnName = "id";
+                    m_SmsSendInfoTableSorted.Columns["SenderKeyId"].ColumnName = "ParentId";
+                    return m_SmsSendInfoTableSorted;
+                }
+                else                                    //以电话号码组织树
+                {
+                    DataTable m_RootTable = m_SmsSendInfoView.ToTable(true, "PhoneNumber");
+                    DataTable m_SmsSendInfoTableSorted = m_SmsSendInfoView.ToTable();
+                    m_SmsSendInfoTableSorted.Columns.Add("text", typeof(string));
+                    for (int i = 0; i < m_RootTable.Rows.Count; i++)
+                    {
+                        DataRow m_NewRowTemp = m_SmsSendInfoTableSorted.NewRow();
+                        m_NewRowTemp["text"] = m_RootTable.Rows[i]["PhoneNumber"];
+                        m_NewRowTemp["SendItemId"] = m_RootTable.Rows[i]["PhoneNumber"];
+                        m_NewRowTemp["SenderKeyId"] = DBNull.Value; 
+                        m_NewRowTemp["GroupKey1"] = DBNull.Value;
+                        m_NewRowTemp["GroupKey2"] = DBNull.Value;
+                        m_NewRowTemp["GroupKey3"] = DBNull.Value;
+                        m_NewRowTemp["PhoneNumber"] = "0";
+                        m_NewRowTemp["SendCount"] = DBNull.Value;
+                        m_NewRowTemp["CreateTime"] = DBNull.Value;
+                        m_NewRowTemp["OrderSendTime"] = DBNull.Value;
+                        m_NewRowTemp["AlarmText"] = DBNull.Value;
+                        m_NewRowTemp["SmsState"] = DBNull.Value;
+                        m_NewRowTemp["SendResult"] = DBNull.Value;
+                        m_SmsSendInfoTableSorted.Rows.Add(m_NewRowTemp);
+                    }
+                    m_SmsSendInfoTableSorted.Columns["SendItemId"].ColumnName = "id";
+                    m_SmsSendInfoTableSorted.Columns["PhoneNumber"].ColumnName = "ParentId";
+                    m_SmsSendInfoTableSorted.Columns.Add("PhoneNumber", typeof(string));
+                    return m_SmsSendInfoTableSorted;
+                }
             }
             else
             {
-                string mySql = @"(SELECT  '' as LevelCode,'node' as NodeType,[SenderKeyId] ,[SenderType] ,[GroupKey1],[GroupKey2] ,[OrderSendTime],[AlarmText]
-                                    ,'' as [PhoneNumber],'' as [SendCount],'' as [State],'' as [SendResult],'' as [TYPE_NAME]
-                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] 
-                                where( [GroupKey1] like @organizationId+'%' or [GroupKey1]=@organizationName)
-                                        and OrderSendTime>=@startTime
-                                        and OrderSendTime<=@endTime
-                                        and [State]='99'
-                                group by  [SenderKeyId],[SenderType],[GroupKey1],[GroupKey2],[OrderSendTime] ,[AlarmText],[State])
-	                        union all
-                             (SELECT '' as LevelCode,'leafnode' as NodeType,A.[SenderKeyId],A.[SenderType],A.[GroupKey1],A.[GroupKey2],A.[OrderSendTime]
-                                    ,A.[AlarmText] ,A.[PhoneNumber],A.[SendCount],A.State,A.[SendResult],B.[TYPE_NAME]
-                                FROM [NXJC].[dbo].[terminal_SmsSendInfo] A,[dbo].[system_TypeDictionary] B  
-                                where  B.[GROUP_ID]='SMSendState' and A.State=B.[TYPE_ID]
-                                     and   (A.[GroupKey1] like @organizationId+'%' or A.[GroupKey1]=@organizationName)
-                                     and A.OrderSendTime>=@startTime
-                                     and A.OrderSendTime<=@endTime
-                                     and A.State=@state1
-                                     and A.PhoneNumber=@phoneNumber)
-                              order by OrderSendTime desc,NodeType desc ,GroupKey1";
-                SqlParameter[] parameters ={
-                            new SqlParameter("organizationId", organizationId),
-                            new SqlParameter("organizationName", organizationName),
-                            new SqlParameter("startTime", startTime),
-                            new SqlParameter("endTime", endTime),
-                            new SqlParameter("state1", state1),
-                            new SqlParameter("phoneNumber", phoneNumber)
-                         };
-                table = dataFactory.Query(mySql, parameters);
-            }                     
-            int mcode = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                string id = table.Rows[i]["NodeType"].ToString();
-                if (id == "node")
-                {
-                    string nodeCode = "M01" + (++mcode).ToString("00");
-                    table.Rows[i]["LevelCode"] = nodeCode;
-                    int mleafcode = 0;
-                    for (int j = 0; j < table.Rows.Count; j++)
-                    {
-                        if (table.Rows[j]["SenderKeyId"].ToString().Trim() == table.Rows[i]["SenderKeyId"].ToString().Trim() && table.Rows[j]["NodeType"].ToString().Equals("leafnode"))
-                        {
-                            table.Rows[j]["LevelCode"] = nodeCode + (++mleafcode).ToString("00");
-                        }
-                    }
-                }         
+                return null;
             }
-            DataColumn stateColumn = new DataColumn("state", typeof(string));
-            table.Columns.Add(stateColumn);
-            foreach (DataRow dr in table.Rows)
-            {
-                if (dr["NodeType"].ToString() == "node")
-                {
-                    dr["state"] = "open";
-                }
-                else
-                {
-                    dr["state"] = "open";
-                }
-            }
-            return table;
         }
-//        public static DataTable ComboboxValue()
-//        {
-//            string connectionString = ConnectionStringFactory.NXJCConnectionString;
-//            ISqlServerDataFactory dataFactory = new SqlServerDataFactory(connectionString);
-//            string mySql = @"SELECT [TYPE_ID]
-//                                ,[TYPE_NAME]
-//                                ,[GROUP_ID]
-//                                ,[DISPLAY_INDEX]
-//                                ,[REMARK]
-//                                ,[ENABLED]
-//                            FROM [NXJC].[dbo].[system_TypeDictionary]
-//                            where [GROUP_ID]='SMSendState' order by DISPLAY_INDEX";
-//            DataTable table = dataFactory.Query(mySql);
-//            return table;
-//        }
     }
 }

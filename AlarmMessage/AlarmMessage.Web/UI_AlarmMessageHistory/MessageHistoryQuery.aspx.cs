@@ -19,7 +19,7 @@ namespace AlarmMessage.Web.UI_AlarmMessageHistory
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_byc_byf","zc_nxjc_lpsc_lpsf" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
 #elif RELEASE
 #endif
@@ -29,11 +29,15 @@ namespace AlarmMessage.Web.UI_AlarmMessageHistory
             }
         }
         [WebMethod]
-        public static string GetQueryData(string organizationId, string organizationName, string startTime, string endTime, string state1, string phoneNumber)
+        public static string GetQueryData(string organizationId, string organizationName, string startTime, string endTime, string state, string phoneNumber, string myStaticsMethod)
         {
-            DataTable table = MessageHitoryQueryService.GetSmsSendInfo(organizationId, organizationName, startTime, endTime, state1, phoneNumber);
-            string[] paraColumns = { "NodeType", "SenderType", "GroupKey1", "GroupKey2" };
-            string json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJsonByLevelCode(table, "LevelCode");
+            DataTable table = MessageHitoryQueryService.GetSmsSendInfo(organizationId, organizationName, startTime, endTime, state, phoneNumber, myStaticsMethod);
+            string json = "{\"rows\":[],\"total\":0}";
+            if (table != null && table.Rows.Count > 0)
+            {
+                json = EasyUIJsonParser.TreeGridJsonParser.DataTableToJson(table, "Id", "Text", "ParentId", "0", new string[]{
+                         "GroupKey1","GroupKey2","GroupKey3","PhoneNumber","SmsState","SendCount","CreateTime","OrderSendTime","AlarmText","SendResult"});
+            }
             return json;
         }
         //[WebMethod]

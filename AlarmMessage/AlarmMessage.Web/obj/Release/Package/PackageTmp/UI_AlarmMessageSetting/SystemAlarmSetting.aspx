@@ -54,7 +54,7 @@
                                         onclick="RefreshFun();">刷新</a>
                                     </td>
                                     <td>
-                                        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="addFun()">添加</a>
+                                        <a id="id_add" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="addFun()">添加</a>
                                     </td>
                              
 <%--                                 <td>
@@ -64,7 +64,7 @@
                                         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="reject()">撤销</a>
                                      </td>--%>
                                      <td>
-                                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel',plain:true" onclick="cancelFun();">删除</a>
+                                        <a id="id_deleteAll" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel',plain:true" onclick="cancelFun();">删除</a>
                                     </td>                                  
                                     </tr>                          
                          </table>
