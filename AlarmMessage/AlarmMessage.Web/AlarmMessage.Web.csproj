@@ -1605,7 +1605,9 @@
     <Content Include="UI_AlarmMessageHistory\js\page\AlarmHistoryQuery.js" />
     <Content Include="UI_AlarmMessageHistory\js\page\MessageHistoryQuery.js" />
     <Content Include="UI_AlarmMessageHistory\MessageHistoryQuery.aspx" />
+    <Content Include="UI_AlarmMessageSetting\js\page\SMSSendingPlatformSetting.js" />
     <Content Include="UI_AlarmMessageSetting\js\page\SystemAlarmSetting.js" />
+    <Content Include="UI_AlarmMessageSetting\SMSSendingPlatformSetting.aspx" />
     <Content Include="UI_AlarmMessageSetting\SystemAlarmSetting.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1626,6 +1628,13 @@
     </Compile>
     <Compile Include="UI_AlarmMessageHistory\MessageHistoryQuery.aspx.designer.cs">
       <DependentUpon>MessageHistoryQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_AlarmMessageSetting\SMSSendingPlatformSetting.aspx.cs">
+      <DependentUpon>SMSSendingPlatformSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_AlarmMessageSetting\SMSSendingPlatformSetting.aspx.designer.cs">
+      <DependentUpon>SMSSendingPlatformSetting.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI_AlarmMessageSetting\SystemAlarmSetting.aspx.cs">
       <DependentUpon>SystemAlarmSetting.aspx</DependentUpon>

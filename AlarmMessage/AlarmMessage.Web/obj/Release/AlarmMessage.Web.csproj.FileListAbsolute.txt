@@ -135,3 +135,7 @@ C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Web\bin
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Web\obj\Release\AlarmMessage.Web.csprojResolveAssemblyReference.cache
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Web\obj\Release\AlarmMessage.Web.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Web\obj\Release\AlarmMessage.Web.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.dll
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\EasyUIJsonParser.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\WebStyleBaseForEnergy.pdb
+C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.pdb

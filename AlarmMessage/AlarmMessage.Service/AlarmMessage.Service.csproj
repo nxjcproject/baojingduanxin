@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="AlarmMessageHistory\AlarmHistoryQueryService.cs" />
     <Compile Include="AlarmMessageHistory\MessageHitoryQueryService.cs" />
+    <Compile Include="AlarmMessageSetting\SMSSendingPlatformSettingService.cs" />
     <Compile Include="AlarmMessageSetting\SystemAlarmSettingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

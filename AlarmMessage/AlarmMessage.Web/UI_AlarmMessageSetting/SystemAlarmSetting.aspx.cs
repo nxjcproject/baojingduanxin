@@ -28,7 +28,7 @@ namespace AlarmMessage.Web.UI_AlarmMessageSetting
 #endif
                 string m_PageId = Request.QueryString["PageId"] != null ? Request.QueryString["PageId"] : "";
                 Hiddenfield_PageId.Value = m_PageId;
-                Hiddenfield_PageId.Value = "33346410-84A8-4904-BCCC-FE006AC86221";
+                //Hiddenfield_PageId.Value = "33346410-84A8-4904-BCCC-FE006AC86221";
                 this.OrganisationTree_ProductionLine.Organizations = GetDataValidIdGroup("ProductionOrganization");                         //向web用户控件传递数据授权参数
                 this.OrganisationTree_ProductionLine.PageName = "SystemAlarmSetting.aspx";   //向web用户控件传递当前调用的页面名称
                 this.OrganisationTree_ProductionLine.LeveDepth = 5;
