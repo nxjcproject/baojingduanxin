@@ -53,7 +53,7 @@ function loadDataGrid(type, myData) {
             
             toolbar: '#toolbar_ReportTemplate',
             columns: [[
-                { field: 'Name', title: '组织机构', width: 70},
+                { field: 'Name', title: '组织机构', width: 85},
                 { field: 'AlarmTypeName', title: '报警类型', width: 100 },
                 //{ field: 'AlarmGroup', title: '报警组', width: 150 },
                 { field: 'StartTime', title: '开始时间', width: 130 },
