@@ -53,7 +53,7 @@
         <div id="toolbar_ReportTemplate" style="display: none; height: 60px; padding-top: 10px">
             <table>
                 <tr>
-                    <td style="width: 60px; text-align: right;">生产线</td>
+                    <td style="width: 60px; text-align: right;">组织机构</td>
                     <td style="width: 105px;">
                         <input id="productLineName" class="easyui-textbox" style="width: 100px;" readonly="true" />
                         <input id="organizationId" readonly="readonly" style="display: none;" />
@@ -78,7 +78,7 @@
                         <%--<input id="datetime" class="easyui-datetimespinner" value="6/24/2014" data-options="formatter:formatter2,parser:parser2,selections:[[0,4],[5,7]]" style="width:180px;" />--%>
                         <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                     </td>
-                    <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+                    <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
                         onclick="query();">查询</a>
                     </td>
                     <td></td>

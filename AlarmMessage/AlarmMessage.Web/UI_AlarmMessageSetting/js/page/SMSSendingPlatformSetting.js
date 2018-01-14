@@ -34,7 +34,7 @@ function LoadModifyPasswordDialog(myDialogId) {
     $('#' + myDialogId).dialog({
         title: '短信发送平台设置',
         width: 540,
-        height: 480,
+        height: 440,
         resizable: false,
         draggable: false,
         closable: false,

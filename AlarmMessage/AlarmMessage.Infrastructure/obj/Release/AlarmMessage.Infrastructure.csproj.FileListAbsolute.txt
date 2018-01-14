@@ -38,3 +38,8 @@ C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrast
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\bin\Release\AlarmMessage.Infrastructure.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\bin\Release\AlarmMessage.Infrastructure.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Infrastructure\obj\Release\AlarmMessage.Infrastructure.pdb

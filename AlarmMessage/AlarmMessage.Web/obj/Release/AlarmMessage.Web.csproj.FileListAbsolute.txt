@@ -139,3 +139,19 @@ C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.W
 C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\EasyUIJsonParser.pdb
 C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\WebStyleBaseForEnergy.pdb
 C:\Users\Administrator\Desktop\baojingduanxin-master\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Web.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Web.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Infrastructure.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Service.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\SqlServerDataAdapter.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\InternalMemeryRestore.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AutoMapper.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Infrastructure.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Service.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\EasyUIJsonParser.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\WebStyleBaseForEnergy.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Release\AlarmMessage.Web.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Release\AlarmMessage.Web.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Release\AlarmMessage.Web.pdb

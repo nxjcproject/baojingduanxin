@@ -130,3 +130,10 @@ C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessag
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb

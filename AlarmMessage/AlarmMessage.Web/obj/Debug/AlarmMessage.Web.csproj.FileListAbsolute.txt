@@ -235,3 +235,19 @@ C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessag
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Debug\AlarmMessage.Web.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Debug\AlarmMessage.Web.dll
 C:\Users\Administrator\Desktop\NXJC统一调整列宽\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Debug\AlarmMessage.Web.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Web.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Web.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Infrastructure.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Service.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\SqlServerDataAdapter.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\InternalMemeryRestore.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AutoMapper.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Infrastructure.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\AlarmMessage.Service.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\EasyUIJsonParser.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\WebStyleBaseForEnergy.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\bin\mDbDataAdaper.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Debug\AlarmMessage.Web.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Debug\AlarmMessage.Web.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Web\obj\Debug\AlarmMessage.Web.pdb

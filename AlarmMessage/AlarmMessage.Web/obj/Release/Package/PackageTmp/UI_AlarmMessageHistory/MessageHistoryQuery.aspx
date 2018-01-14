@@ -71,7 +71,7 @@
                                         <option value="PhoneNumber">按手机号</option>                     
                                     </select>
                                 </td>                                                                      
-                                <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+                                <td><a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
                                     onclick="Query();">查询</a>
                                 </td>               
                            </tr>

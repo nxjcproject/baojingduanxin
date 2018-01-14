@@ -30,73 +30,73 @@
                 <%--<legend>短信发送平台设置</legend>--%>
                 <table style="width: 100%;border-collapse:separate; border-spacing:0px 1px;">
                     <tr>
-                        <th style="height: 30px;">名称</th>
+                        <th style="height: 27px;">名称</th>
                         <td>
                             <input id="TextBox_SmsName" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">接口地址</th>
+                        <th style="height: 27px;">接口地址</th>
                         <td>
                             <input id="TextBox_InterfaceAddress" class="easyui-textbox" style="width: 340px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">接口端口</th>
+                        <th style="height: 27px;">接口端口</th>
                         <td>
                             <input id="TextBox_InterfacePort" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">用户代码</th>
+                        <th style="height: 27px;">用户代码</th>
                         <td>
                             <input id="TextBox_UserCode" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">用户ID</th>
+                        <th style="height: 27px;">用户ID</th>
                         <td>
                             <input id="TextBox_UserId" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">短信模版</th>
+                        <th style="height: 27px;">短信模版</th>
                         <td>
                             <input id="TextBox_SmsTemplate" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">每天发送的最大数量</th>
+                        <th style="height: 27px;">每天发送的最大数量</th>
                         <td>
                             <input id="TextBox_MaxSmsPerNumberOnDay" class="easyui-textbox" style="width: 180px;" /><span>（同一号码）</span>
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">每条短信重试次数</th>
+                        <th style="height: 27px;">每条短信重试次数</th>
                         <td>
                             <input id="TextBox_MaxSendTimesPerSms" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">短信内容最大长度</th>
+                        <th style="height: 27px;">短信内容最大长度</th>
                         <td>
                             <input id="TextBox_MaxSmsWordLength" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">短信失效时间</th>
+                        <th style="height: 27px;">短信失效时间</th>
                         <td>
                             <input id="TextBox_InvalidTime" class="easyui-textbox" style="width: 180px;" /><span>（分钟）</span>
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">备注</th>
+                        <th style="height: 27px;">备注</th>
                         <td>
                             <input id="TextBox_Remark" class="easyui-textbox" style="width: 180px;" />
                         </td>
                     </tr>
                     <tr>
-                        <th style="height: 30px;">是否开启</th>
+                        <th style="height: 27px;">是否开启</th>
                         <td>
                             <select class="easyui-combobox" id="Combo_Enable" style="width:100px" data-options="panelHeight: 'auto'">
                                     <option value="True">启用</option>
@@ -124,7 +124,7 @@
             </table>
         </div>
 
-      <div id="AmendPassword" class="easyui-window" title="修改密码" data-options="modal:true,closed:true,iconCls:'icon-edit',minimizable:false,maximizable:false,collapsible:false,resizable:false,plain:true" style="width:300px;height:200px;padding:8px 25px 8px 25px"> 
+      <div id="AmendPassword" class="easyui-window" title="修改密码" data-options="modal:true,closed:true,iconCls:'icon-edit',minimizable:false,maximizable:false,collapsible:false,resizable:false,plain:true" style="width:300px;height:180px;padding:8px 25px 8px 25px"> 
        <div class="easyui-layout" data-options="fit:true,border:false" >    
          <div id="toorBarWindows" data-options="region:'center'" style="padding:10px;">          
                 <table>

@@ -79,3 +79,11 @@ C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Service
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.csprojResolveAssemblyReference.cache
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Service.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Service.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Infrastructure.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AutoMapper.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Release\AlarmMessage.Infrastructure.pdb
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.dll
+D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Release\AlarmMessage.Service.pdb
