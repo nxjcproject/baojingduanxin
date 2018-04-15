@@ -5,7 +5,6 @@ $(function () {
     InitDate();
     loadDataGrid("first");
     LoadSystemAlarmTypeList();
-    //loadCombobox("first"); 
 });
 //初始化日期框
 function InitDate() {
@@ -48,24 +47,19 @@ function loadDataGrid(type, myData) {
             rownumbers: true,
             singleSelect: true,
             fit: true,
-            //data: [],
-            //pagination: true,
-            
+            remoteSort: false,
             toolbar: '#toolbar_ReportTemplate',
             columns: [[
                 { field: 'Name', title: '组织机构', width: 85},
                 { field: 'AlarmTypeName', title: '报警类型', width: 100 },
-                //{ field: 'AlarmGroup', title: '报警组', width: 150 },
                 { field: 'StartTime', title: '开始时间', width: 130 },
                 { field: 'EndTime', title: '结束时间', width: 130 },
-                { field: 'AlarmText', title: '报警对象', width: 400 }
-                //{field:'',title:'报警时长',width:}
+                { field: 'AlarmText', title: '报警对象', width: 400, sortable: true }
             ]],
         })
     }
     else {
         $("#Windows_Report").datagrid('loadData', myData);
-
     }
 }
 function onOrganisationTreeClick(node) {
@@ -82,16 +76,12 @@ function onOrganisationTreeClick(node) {
     // organizationId为其它任何函数提供当前选中的组织机构ID
 
     $('#organizationId').val(node.OrganizationId);
-
     // 设置组织机构名称
     // 用于呈现，在界面上显示当前的组织机构名称
-
     $('#productLineName').textbox('setText', node.text);
-
     clearTimeout(g_timer);
     realtimeAlarm();
 }
-
 
 function query() {
     // 获取组织机构ID
@@ -128,7 +118,6 @@ function query() {
                 $.messager.alert('提示', '没有相关数据！');
                 loadDataGrid("last", []);
             } else {
-                //loadDataGrid("last", m_msg.rows);
                 loadDataGrid("last", m_msg);
             }
             error: function handleError() {

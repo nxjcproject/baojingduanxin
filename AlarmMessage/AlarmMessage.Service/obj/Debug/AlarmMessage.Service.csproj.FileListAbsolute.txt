@@ -137,3 +137,10 @@ D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\Al
 D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
 D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
 D:\nxjc AllProject\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.dll
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Service.pdb
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.dll
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\bin\Debug\AlarmMessage.Infrastructure.pdb
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.dll
+C:\Users\Administrator\Desktop\baojingduanxin\AlarmMessage\AlarmMessage.Service\obj\Debug\AlarmMessage.Service.pdb
